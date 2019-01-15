@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+    <link rel="stylesheet" type="text/css" href="_css/main.css" />
+    <!-- jQuery -->
+    <script src="_jQuery/jquery-3.3.1.min.js"></script>
+    
+    <script>
+
+        var caixa = document.getElementById('videos');
+        var caixaX = 0;
+
+        function scrollVideos(lado){
+            if (lado == '+'){
+                caixaX -= 200;
+                
+                $('#videos').css("transform", `translate(${caixaX}px, 0px)`);
+                //alert(caixaX);
+            }
+            else{
+                caixaX += 200;
+                $('#videos').css("transform", `translate(${caixaX}px, 0px)`);
+                //alert(caixaX);
+            }
+        }
+
+    </script>
+
+    <style>
+        body{
+            overflow-x: hidden;
+        }
+
+        .teste{
+            width: 2000px;
+            background: black;
+            color: white;
+            text-align: right;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .imagens{
+            display: inline;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="teste" id="videos">
+
+        <div class="imagens">
+            <img src="_imagens/desenhando.png">
+        </div>
+
+        <div class="imagens">
+            <img src="_imagens/desenhando.png">
+        </div>
+
+        <div class="imagens">
+            <img src="_imagens/desenhando.png">
+        </div>
+       
+    </div>
+
+    <br><br><br>
+    <button id="esquerda" onmousedown="scrollVideos('-')">Esquerda</button>
+    <button id="direita" onmousedown="scrollVideos('+')">Direita</button>
+
+</body>
+</html>
